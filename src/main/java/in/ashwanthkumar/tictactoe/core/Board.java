@@ -3,6 +3,7 @@ package in.ashwanthkumar.tictactoe.core;
 public class Board {
     public static final char ME = 'X';
     public static final char HIM = 'O';
+    public static final char EMPTY = '\0';
 
     char[][] board;
     int size;
@@ -13,7 +14,7 @@ public class Board {
         board = new char[size][size];
         for (int row = 0; row < size; row++) {
             for (int column = 0; column < size; column++) {
-                board[row][column] = '\0';
+                board[row][column] = EMPTY;
             }
         }
     }

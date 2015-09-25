@@ -7,10 +7,26 @@ import java.util.Map;
 public class Game {
     Board board;
     BoardValidator validator;
+    int marks;
 
     public Game(int gridSize, int numberOfMarks) {
         board = new Board(gridSize);
-        validator = new BoardValidator(board, numberOfMarks);
+        this.marks = numberOfMarks;
+        validator = new BoardValidator(this.board, this.marks);
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+
+    public String whoWon() {
+        if(validator.hasPlayer1Won()) return "player1";
+        else if(validator.hasPlayer2Won()) return "player2";
+        else return "none";
     }
 
     public boolean isOver() {
@@ -23,6 +39,14 @@ public class Game {
         return validator.hasPlayer1Won() ||
                 validator.hasPlayer2Won() ||
                 board.isFull();
+    }
+
+    public void opponentMove(String input) {
+        String[] parts = input.split("\\|");
+        int x = Integer.valueOf(parts[0]);
+        int y = Integer.valueOf(parts[1]);
+
+        board.placeHisMove(x, y);
     }
 
     public Map<String, Map<String, String>> prettyPrint() {

@@ -63,7 +63,7 @@ public class GameResource {
         Maps.MapBuilder<String, Object> builder = Maps.builder();
         builder.put("status", "ok");
         builder.put("marks", game.getMarks());
-        builder.put("over", game.isOver());
+        builder.put("game_over", game.isOver());
         builder.put("who_won", game.whoWon());
         builder.put("board", game.prettyPrint());
         return builder.value();

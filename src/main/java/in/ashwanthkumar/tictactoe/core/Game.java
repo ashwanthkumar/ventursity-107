@@ -1,7 +1,10 @@
 package in.ashwanthkumar.tictactoe.core;
 
+import in.ashwanthkumar.utils.collections.Lists;
 import in.ashwanthkumar.utils.collections.Maps;
+import in.ashwanthkumar.utils.lang.tuple.Tuple2;
 
+import java.util.List;
 import java.util.Map;
 
 public class Game {
@@ -41,12 +44,25 @@ public class Game {
                 board.isFull();
     }
 
-    public void opponentMove(String input) {
+    public void doMove(String input) {
         String[] parts = input.split("\\|");
         int x = Integer.valueOf(parts[0]);
         int y = Integer.valueOf(parts[1]);
 
         board.placeHisMove(x, y);
+    }
+
+    public List<Tuple2<Integer, Integer>> availableMoves() {
+        List<Tuple2<Integer, Integer>> moves = Lists.Nil();
+        for (int row = 0; row < board.getSize(); row++) {
+            for (int column = 0; column < board.getSize(); column++) {
+                if(board.getPosition(row, column) == Board.EMPTY) {
+                    moves.add(new Tuple2<Integer, Integer>(row, column));
+                }
+            }
+        }
+
+        return moves;
     }
 
     public Map<String, Map<String, String>> prettyPrint() {

@@ -43,7 +43,7 @@ public class GameResource {
     @Path("move")
     @Timed
     public Map<String, String> move(@QueryParam("m") String m) {
-        game.opponentMove(m);
+        game.doMove(m);
         return Maps.of("m", myMove());
     }
 

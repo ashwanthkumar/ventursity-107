@@ -1,4 +1,4 @@
-package in.ashwanthkumar.tictactoe;
+package in.ashwanthkumar.tictactoe.core;
 
 public class Board {
     public static final char ME = 'X';

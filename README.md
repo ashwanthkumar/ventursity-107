@@ -1,3 +1,5 @@
+[![Build Status](https://snap-ci.com/ashwanthkumar/ventursity-107/branch/master/build_image)](https://snap-ci.com/ashwanthkumar/ventursity-107/branch/master)
+
 # Problem Statement
 ### The game of n by n Tic-Tac-Toe
 #### Create an API

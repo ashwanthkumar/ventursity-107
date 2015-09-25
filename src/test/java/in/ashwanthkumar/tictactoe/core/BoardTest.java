@@ -53,5 +53,12 @@ public class BoardTest {
         assertThat(board.isFull(), is(true));
     }
 
+    @Test
+    public void shouldTestDeepCopy() {
+        Board board = new Board(3);
+        board.placeHisMove(1, 0).placeMyMove(1, 2);
+        Board clone = board.deepCopy();
+        assertThat(board, is(clone));
+    }
 
 }

@@ -17,7 +17,7 @@ Run the webservice on port 8080. Expose the following three APIs:
 | ---   | ---       |   ---         |   ---             | ---       |
 |   /ping   |   GET |   --  |   {ok:true}   |   To let us know your bot is alive
 |   /start	|   GET |p, q   |   {ok:true}   |   For you to initialize the round. p indicates size of the grid and q indicates the number of marks in a row that you need to do to win.
-|   /move	|   GET |m  |   {m:"1|2"}   |   m: the last square marked by your opponent. Your response will convey your next play (or any error e.g. spot is filled etc.)
+|   /move	|   GET |m  |   {m:"1&#124;2"}   |   m: the last square marked by your opponent. Your response will convey your next play (or any error e.g. spot is filled etc.)
 
 
 Note: All positions are represented as x|y where x and y are respective coordinates on the board. The bottom left corner is 1|1.

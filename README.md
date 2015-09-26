@@ -41,7 +41,7 @@ To implement a new player (bot algorithm),
 - Add an entry to `PlayerFactory`
 - Change the name of the player in `GameResource`
 
-PS: Since the problem statement (as I understood) was more focused on exposing the bot as a webservice than the intelligence, I guess this should work :smile:
+PS: Since the problem statement (as I understood) was more focused on exposing the bot as a webservice than it's intelligence, I guess this should work :smile:
 
 # Problem Statement
 ### The game of n by n Tic-Tac-Toe

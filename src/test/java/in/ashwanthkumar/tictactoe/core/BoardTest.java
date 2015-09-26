@@ -59,6 +59,35 @@ public class BoardTest {
         board.placeHisMove(1, 0).placeMyMove(1, 2);
         Board clone = board.deepCopy();
         assertThat(board, is(clone));
+
+        clone.placeMyMove(0, 0);
+        assertThat(board.getPosition(0, 0), is(Board.EMPTY));
     }
+
+    @Test
+    public void shouldGeneratePrettyTable() {
+        Board board = new Board(3);
+        board.placeHisMove(0, 0);
+        board.placeMyMove(1, 0);
+        board.placeHisMove(2, 0);
+        board.placeMyMove(0, 1);
+        board.placeHisMove(1, 1);
+        board.placeMyMove(2, 1);
+        board.placeHisMove(0, 2);
+        board.placeMyMove(1, 2);
+        board.placeHisMove(2, 2);
+
+        String expected = "" +
+                " ------- ------- -------\n" +
+                "|   O   |   X   |   O   |\n" +
+                " ------- ------- -------\n" +
+                "|   X   |   O   |   X   |\n" +
+                " ------- ------- -------\n" +
+                "|   O   |   X   |   O   |\n" +
+                " ------- ------- -------\n";
+
+        assertThat(board.toString(), is(expected));
+    }
+
 
 }

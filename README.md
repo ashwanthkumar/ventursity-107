@@ -8,7 +8,7 @@
 ## Usage
 ```bash
 $ mvn clean package
-$ java -cp target/*.jar in.ashwanthkumar.tictactoe.service.GameResource server
+$ java -cp target/venturcity-107-1.0.0-SNAPSHOT.jar in.ashwanthkumar.tictactoe.service.GameService server
 ```
 
 The service runs on port 8080.

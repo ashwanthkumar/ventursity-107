@@ -28,8 +28,8 @@ public class BoardValidatorTest {
         board.placeMyMove(0, 2);
 
         BoardValidator validator = new BoardValidator(board, 3);
-        assertThat(validator.hasPlayer1Won(), is(true));
-        assertThat(validator.hasPlayer2Won(), is(false));
+        assertThat(validator.hasPlayerWon(), is(true));
+        assertThat(validator.hasOpponentWon(), is(false));
     }
 
     @Test
@@ -53,8 +53,8 @@ public class BoardValidatorTest {
         board.placeMyMove(2, 0);
 
         BoardValidator validator = new BoardValidator(board, 3);
-        assertThat(validator.hasPlayer1Won(), is(true));
-        assertThat(validator.hasPlayer2Won(), is(false));
+        assertThat(validator.hasPlayerWon(), is(true));
+        assertThat(validator.hasOpponentWon(), is(false));
     }
 
     @Test
@@ -78,8 +78,8 @@ public class BoardValidatorTest {
         board.placeMyMove(2, 2);
 
         BoardValidator validator = new BoardValidator(board, 3);
-        assertThat(validator.hasPlayer1Won(), is(true));
-        assertThat(validator.hasPlayer2Won(), is(false));
+        assertThat(validator.hasPlayerWon(), is(true));
+        assertThat(validator.hasOpponentWon(), is(false));
     }
 
 }

@@ -5,7 +5,7 @@ public class BoardValidator {
         ROW, COLUMN
     }
 
-    Board board;
+    final Board board;
     int marks;
 
     public BoardValidator(Board board, int marks) {
@@ -13,12 +13,12 @@ public class BoardValidator {
         this.marks = marks;
     }
 
-    public boolean hasPlayer1Won() {
+    public boolean hasPlayerWon() {
         return haveWon(Board.ME);
     }
 
-    public boolean hasPlayer2Won() {
-        return haveWon(Board.HIM);
+    public boolean hasOpponentWon() {
+        return haveWon(Board.OPPONENT);
     }
 
     private boolean haveWon(char whom) {
